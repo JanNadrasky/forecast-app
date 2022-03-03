@@ -1,0 +1,82 @@
+.mainIcon {
+    width: 40px;
+    height: auto;
+}
+
+.subIcon {
+    width: 24px;
+    height: auto;
+}
+
+.arrowIcon {
+    width: 5px;
+    height: auto;
+}
+
+.headerText {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16.8px;
+    color: #999;
+    font-family: "Barlow";
+}
+
+.highlightedText {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21.6px;
+    color: #000;
+    font-family: "Barlow";
+}
+
+.minMaxTempInfo {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #666;
+    font-family: "Barlow";
+}
+
+.mainTempInfo {
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 76.8px;
+    color: #000;
+    font-family: "Barlow";
+}
+
+.labelText {
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 9.6px;
+    color: #999;
+    font-family: "Barlow";
+}
+
+.celsius-margin {
+    margin-bottom: 20px;
+}
+
+.blueText {
+    color: #0DA0EA;
+}
+
+.headerTextPosition {
+    margin-right: 18px;
+}
+
+.info-container {
+    margin: 37px 47px 0;
+
+    &__row {
+        max-width: 800px;
+        width: 100%;
+
+        &__item {
+            min-width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

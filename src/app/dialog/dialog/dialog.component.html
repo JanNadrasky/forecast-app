@@ -1,0 +1,14 @@
+<div class="dialog-container" fxLayout="column" fxLayoutAlign="center center">
+    <span class="standardInfoText">Location</span>
+    <form class="full-width">
+        <mat-form-field appearance="fill" class="full-width">
+          <input matInputAutosizeMinWidth='300px' matInputAutosize placeholder="Search city..." type="text" matInput [formControl]="inputControl" [matAutocomplete]="auto">
+          <img matSuffix src="../../../assets/location-icon-black.svg" />
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="closeDialogAndSaveValue()" [displayWith]="displayFn">
+            <mat-option *ngFor="let city of filteredOptions | async" [value]="city">
+              {{city.cityName}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+</div>

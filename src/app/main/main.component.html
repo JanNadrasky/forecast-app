@@ -1,0 +1,84 @@
+<div>
+    <div fxLayoutAlign="space-between" class="mt-18 ml-5">
+        <span class="headerText">{{ currentWeatherForcast.currentTimeAndDate | date : 'EEEE d MMMM y h:mm a' }}</span>
+        <div class="headerTextPosition" fxLayoutGap="7px">
+            <span class="standardInfoText blueText" (click)="openDialog()">{{ chosenCity.cityName }}, Slovakia</span>
+            <img src="../../assets/location-icon.svg" />
+        </div>
+    </div>
+    <div fxLayout="column" class="info-container" fxLayoutAlign="center center" fxLayoutGap="46px">
+        <div class="info-container__row" fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="column" class="info-container__row__item">
+                <img class="mainIcon" src="../../assets/cloud.svg" />
+                <span class="highlightedText">{{ currentWeatherForcast.main }}</span>
+            </div>
+            <div fxLayout="row" class="info-container__row__item">
+                <span class="mainTempInfo">{{ currentWeatherForcast.temperature }}</span>
+                <img class="celsius-margin" src="../../assets/celisus.svg"/>
+            </div>
+            <div fxLayout="column" fxLayoutGap="12px" class="info-container__row__item">
+                <div fxLayout="row" fxLayoutGap="1px">
+                    <span class="minMaxTempInfo">{{ currentWeatherForcast.tempMax }}°C</span>
+                    <img class="arrowIcon" src="../../assets/arrow-up.svg" />
+                </div>
+                <div fxLayout="row" fxLayoutGap="1px">
+                    <span class="minMaxTempInfo">{{ currentWeatherForcast.tempMin }}°C</span>
+                    <img class="arrowIcon" src="../../assets/arrow-down.svg" />
+                </div>
+            </div>
+        </div>
+        <div class="info-container__row" fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="column" class="info-container__row__item">
+                <img class="subIcon mb-16" src="../../assets/humidity.svg" />
+                <span class="mb-4 standardInfoText">{{ currentWeatherForcast.humidity }}%</span>
+                <span class="labelText">Humidity</span>
+            </div>
+            <div fxLayout="column" class="info-container__row__item">
+                <img class="subIcon mb-16" src="../../assets/barometer.svg" />
+                <span class="mb-4 standardInfoText">{{ currentWeatherForcast.airPressure }}mBar</span>
+                <span class="labelText">Pressure</span>
+            </div>
+            <div fxLayout="column" class="info-container__row__item">
+                <img class="subIcon mb-16" src="../../assets/wind.svg" />
+                <span class="mb-4 standardInfoText">{{ currentWeatherForcast.windSpeed }} km/h</span>
+                <span class="labelText">Wind</span>
+            </div>
+        </div>
+        <div class="info-container__row" fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="column" class="info-container__row__item">
+                <img class="subIcon mb-16" src="../../assets/sunset.svg" />
+                <span class="mb-4 standardInfoText">{{ currentWeatherForcast.sunset | date : 'h:mm a'}}</span>
+                <span class="labelText">Sunset</span>
+            </div>
+            <div fxLayout="column" class="info-container__row__item">
+                <img class="subIcon mb-16" src="../../assets/sunrise.svg" />
+                <span class="mb-4 standardInfoText">{{ currentWeatherForcast.sunRise | date : 'h:mm a' }}</span>
+                <span class="labelText">Sunrise</span>
+            </div>
+            <div fxLayout="column" class="info-container__row__item">
+                <img class="subIcon mb-16" src="../../assets/sandclock.svg" />
+                <span class="mb-4 standardInfoText">{{ currentWeatherForcast.dt | date : 'h' }}h {{ currentWeatherForcast.dt | date : 'mm' }}m</span>
+                <span class="labelText">Daytime</span>
+            </div>
+        </div>
+        <div class="info-container__row" fxLayout="row" fxLayoutAlign="space-between center">
+            <ng-container *ngFor="let number of [0,1,2]">
+                <div fxLayout="column" class="info-container__row__item">
+                    <!-- there is not enough pictures to describe weather states, used the same picture for all the upcoming days -->
+                    <img class="subIcon mb-16" src="../../assets/sun.svg" />
+                    <span class="mb-4 standardInfoText">{{ dailyForecast[number].day | date : 'EEE dd' }}</span>
+                    <div fxLayout="row" fxLayoutGap="6px">
+                        <div fxLayoutGap="2px">
+                            <span class="labelText">{{ dailyForecast[number].max }}°C</span>
+                            <img class="arrowIcon" src="../../assets/arrow-up.svg" />
+                        </div>
+                        <div fxLayoutGap="2px">
+                            <span class="labelText">{{ dailyForecast[number].min }}°C</span>
+                            <img class="arrowIcon" src="../../assets/arrow-down.svg" />
+                        </div>
+                    </div> 
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
