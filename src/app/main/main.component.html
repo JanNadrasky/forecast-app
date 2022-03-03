@@ -66,14 +66,14 @@
                 <div fxLayout="column" class="info-container__row__item">
                     <!-- there is not enough pictures to describe weather states, used the same picture for all the upcoming days -->
                     <img class="subIcon mb-16" src="../../assets/sun.svg" />
-                    <span class="mb-4 standardInfoText">{{ dailyForecast[number].day | date : 'EEE dd' }}</span>
+                    <span class="mb-4 standardInfoText">{{ dailyForecast[number]?.day | date : 'EEE dd' }}</span>
                     <div fxLayout="row" fxLayoutGap="6px">
                         <div fxLayoutGap="2px">
-                            <span class="labelText">{{ dailyForecast[number].max }}°C</span>
+                            <span class="labelText">{{ dailyForecast[number]?.max }}°C</span>
                             <img class="arrowIcon" src="../../assets/arrow-up.svg" />
                         </div>
                         <div fxLayoutGap="2px">
-                            <span class="labelText">{{ dailyForecast[number].min }}°C</span>
+                            <span class="labelText">{{ dailyForecast[number]?.min }}°C</span>
                             <img class="arrowIcon" src="../../assets/arrow-down.svg" />
                         </div>
                     </div> 
